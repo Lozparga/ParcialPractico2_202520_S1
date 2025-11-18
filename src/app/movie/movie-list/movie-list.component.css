@@ -1,0 +1,12 @@
+img.poster-img {
+  max-width: 250px;
+}
+
+tr:hover {
+  background-color: rgb(173, 198, 230);
+  cursor: pointer;
+}
+
+thead {
+  background-color: palevioletred;
+}
