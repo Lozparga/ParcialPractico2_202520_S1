@@ -9,6 +9,7 @@ export class Actor {
   photoUrl: string;
   shortBiography: string;
   popularity: number;
+  filmography: Movie[];
 
   constructor(
     id: number,
@@ -19,7 +20,7 @@ export class Actor {
     photoUrl: string,
     shortBiography: string,
     popularity: number,
-
+    filmography: Movie[]
   ) {
     this.id = id;
     this.name = name;
@@ -29,6 +30,6 @@ export class Actor {
     this.photoUrl = photoUrl;
     this.shortBiography = shortBiography;
     this.popularity = popularity;
-
+    this.filmography = filmography;
   }
 }

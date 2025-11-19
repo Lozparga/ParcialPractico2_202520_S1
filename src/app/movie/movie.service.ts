@@ -13,12 +13,12 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   /** Lista todas las movies */
-  getRecipes(): Observable<any[]> {
+  getMovies(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
   /** Consulta el detalle de una movie (por id) */
-  getRecipeDetail(id: number): Observable<Movie> {
+  getMovieDetail(id: number): Observable<Movie> {
   return this.http.get<Movie>(
     ` http://157.253.205.147:8080/api/movies/{id}`
   );

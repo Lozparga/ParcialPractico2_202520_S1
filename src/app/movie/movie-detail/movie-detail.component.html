@@ -1,17 +1,27 @@
-<div>
-  <h2>{{ movie?.title }}</h2>
-  <div>
-    <img class="poster-detail-img" [src]="movie?.posterImageUrl" alt="{{ movie?.title }} poster" />
-  </div>
-  <div>
-    <p><strong>Director:</strong> {{ movie?.director }}</p>
-    <p><strong>Año de lanzamiento:</strong> {{ movie?.releaseYear }}</p>
-    <p><strong>Calificación:</strong> {{ movie?.rating }}</p>
-    <p><strong>Género:</strong> {{ movie?.genre }}</p>
-    <p><strong>Sinopsis:</strong> {{ movie?.description }}</p>
-  </div>
-  <div>
+<div class="detail-bg">
+  <div class="detail-card" *ngIf="movie as m">
+    <div class="detail-left">
+      <h2>{{ m.title }}</h2>
+      <img class="detail-img" [src]="m.posterImageUrl" alt="{{ m.title }}" />
+      <button (click)="goBack()" class="btn-regresar" type="button">
+        Regresar
+      </button>
+    </div>
+  <div class="detail-right">
+    <div class="info-row">
+      <p><strong>Sinopsis:</strong> {{ movie.description }}</p>
+      <p><strong>Director:</strong> {{ movie.director }}</p>
+      <p><strong>Año de lanzamiento:</strong> {{ movie.releaseYear }}</p>
+    </div>
+
+    <div class="info-row">
+        <p><strong>Calificación:</strong> {{ movie.rating }}</p>
+        <p><strong>Género:</strong> {{ movie.genre }}</p>
+      </div>
+
     <h3>Reparto:</h3>
-    <app-actor-list [actors]="movie?.cast"></app-actor-list>
-  </div>
+    <app-actor-list [actors]="movie.cast"></app-actor-list>
 </div>
+</div>
+</div>
+
